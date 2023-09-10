@@ -3,8 +3,6 @@ Defining CI/CD Strategies for data release with dbt & Snowflake
 
 In this page:
 
-/\*<!\[CDATA\[\*/ div.rbtoc1694350117516 {padding: 0px;} div.rbtoc1694350117516 ul {list-style: disc;margin-left: 0px;} div.rbtoc1694350117516 li {margin-left: 0px;padding-left: 0px;} /\*\]\]>\*/
-
 *   [Principles](Defining-CI_CD-Strategies-for-data-release-with-dbt-&-Snowflake.950380.html#DefiningCI/CDStrategiesfordatareleasewithdbt&Snowflake-Principles)
 *   [A comprehensive picture of Continuous Integration, Continuous Delivery and Continuous Deployment in Data Modelling](Defining-CI_CD-Strategies-for-data-release-with-dbt-&-Snowflake.950380.html#DefiningCI/CDStrategiesfordatareleasewithdbt&Snowflake-AcomprehensivepictureofContinuousIntegration,ContinuousDeliveryandContinuousDeploymentinDataModelling)
     *   [Branching Strategy](Defining-CI_CD-Strategies-for-data-release-with-dbt-&-Snowflake.950380.html#DefiningCI/CDStrategiesfordatareleasewithdbt&Snowflake-BranchingStrategy)
@@ -44,7 +42,7 @@ Throughout the development lifecycle of a data product, while ensuring the quali
 A comprehensive picture of Continuous Integration, Continuous Delivery and Continuous Deployment in Data Modelling
 ==================================================================================================================
 
-![](_scroll_external/attachments/untitled-diagram-1694347086576-drawio-f24872543e92a0d7cd527ed468aef0e927164322d2fbe290d3950e2549dc4d8f.png)
+![](_scroll_external/attachments/untitled-diagram-1694347086576-drawio-f24872543e92a0d7cd527ed468aef0e927164322d2fbe290d3950e2549dc4d8f2.png)
 
 Branching Strategy
 ------------------
