@@ -1,6 +1,7 @@
 Defining CI/CD Strategies for data release with dbt & Snowflake
 ===============================================================
-URL: https://aivee.atlassian.net/wiki/spaces/Data/pages/950380/Defining+CI+CD+Strategies+for+data+release+with+dbt+Snowflake
+For more up-to-date content:
+https://confluence.external-share.com/content/82054/defining_ci_cd_strategies_for_data_release_with_dbt___snowflake
 
 In this page:
 
