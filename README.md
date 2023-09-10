@@ -1,5 +1,6 @@
 Defining CI/CD Strategies for data release with dbt & Snowflake
 ===============================================================
+URL: https://aivee.atlassian.net/wiki/spaces/Data/pages/950380/Defining+CI+CD+Strategies+for+data+release+with+dbt+Snowflake
 
 In this page:
 
@@ -78,7 +79,7 @@ dbt test: each model in isolation to ensure that the logic within the model prod
 
 Column Value Tests
 
-generic test macro: accepted\_values
+- generic test macro: accepted\_values
 
 *   Test specific values in the transformed data to ensure correctness.
     
@@ -87,14 +88,14 @@ generic test macro: accepted\_values
 
 Column Existence Tests
 
-custom generic
+- custom generic
 
 *   Ensure that specific columns exist in the transformed model, especially after transformations.
     
 
 Uniqueness Tests
 
-generic test macro: unique
+- generic test macro: unique
 
 *   Ensure that a column (or set of columns) has unique values where expected.
     
@@ -103,7 +104,7 @@ generic test macro: unique
 
 Not-Null Tests
 
-generic test macro: not\_null
+- generic test macro: not\_null
 
 *   Ensure that specific columns don’t have null values where it's not expected.
     
@@ -112,7 +113,7 @@ generic test macro: not\_null
 
 Custom Business Logic Tests
 
-custom generic or singular test macro
+- custom generic or singular test macro
 
 *   All fundids are valid
     
@@ -121,7 +122,7 @@ custom generic or singular test macro
 
 Data Comparison on (Selective) Models
 
-custom data audit/reconciliation package
+- custom data audit/reconciliation package
 
 *   Compare the results of your transformed data before and after the changes.
     
@@ -132,39 +133,26 @@ custom data audit/reconciliation package
 
 ### Integration Tests P2
 
-**Proposed Test**
-
-**dbt Test Type**
-
-**Description**
-
 Referential Integrity Tests
+- generic test macro: relationships
 
-generic test macro: relationships
-
-*   Ensure that foreign keys in one table exist as primary keys in another table.
+- Ensure that foreign keys in one table exist as primary keys in another table.
     
 
 Source Freshness
 
-generic macro: freshness
+- generic macro: freshness
 
 *   Ensure data in lineage flows is updated consistently
     
 
 ### Regression Tests
 
-**Step**
-
-**Description**
-
 dbt test all on nodes
 
 Regression tests ensure that new changes haven't negatively impacted existing models
 
-Lineage Integrity Validation
-
-If unexpected models are built in the test environment.
+Lineage integrity validation if unexpected models are built in the test environment.
 
 CD Strategy - Continuous Deployment vs Continuous Delivery with Clones
 ----------------------------------------------------------------------
@@ -173,25 +161,22 @@ CD Strategy - Continuous Deployment vs Continuous Delivery with Clones
 
 Pushing new or modified code to a code base environment. This might include changes to transformation logic, new data models, adjustments to data pipelines, or any other code-based alterations.
 
-**Step**
-
-**Description**
 
 Code Review Approval
 
-Require code review process or multiple levels of approvals, ideally by Data Product Tech Lead
+- Require code review process or multiple levels of approvals, ideally by Data Product Tech Lead
 
 User Acceptance Testing Approval
 
-QA Team or Data Owner
+- QA Team or Data Owner
 
 Merge
 
-Once having 2 signoffs above indicates it’s ready to ship. The release branch gets merged into the base branch.
+- Once having 2 signoffs above indicates it’s ready to ship. The release branch gets merged into the base branch.
 
 Release Tag
 
-Automatic tagging with a release version number preparing for the actual release of datasets
+- Automatic tagging with a release version number preparing for the actual release of datasets
 
 ### Release _Dataset Changes_
 
@@ -234,10 +219,7 @@ Ensure critical datasets (e.g. final consumable datasets) are as still as expect
 
 If the release process succeeded, we start switching Blue ↔︎ Green environments by:
 
-*   Wrapping RENAME DDL operations in an atomic transaction.
-    
-
-Renaming an object in Snowflake is generally a fast, metadata-only operation.
+*   Wrapping RENAME DDL operations in an atomic transaction. Renaming an object in Snowflake is generally a fast, metadata-only operation.
 
 `BEGIN;`
 
@@ -258,13 +240,11 @@ Renaming an object in Snowflake is generally a fast, metadata-only operation.
 
 ### Post-Release
 
-**Step**
+- Notify relevant stakeholders on new successful release.
 
-Notify relevant stakeholders on new successful release.
+- Update documentation
 
-Update documentation
-
-Cleaning up Staging Environment
+- Cleaning up Staging Environment
 
 CICD patterns
 =============
